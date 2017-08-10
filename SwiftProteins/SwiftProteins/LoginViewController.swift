@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  SwiftProteins
 //
-//  Created by Igor Chemencedji on 8/7/17.
+//  Created by Igor Chemencedji on 8/10/17.
 //  Copyright © 2017 Igor Chemencedji. All rights reserved.
 //
 

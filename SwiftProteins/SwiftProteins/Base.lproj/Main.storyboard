@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BeN-aq-L27">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PTD-Km-lgG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,37 +14,73 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftProteins" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="si7-F1-wur"/>
+                        <viewControllerLayoutGuide type="bottom" id="mHF-VS-cYI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="EWc-EH-jes">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ypu-2S-Hk7"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruL-E9-cTc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="KXv-yU-Mth">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lid-bL-jI9">
+                                        <rect key="frame" x="78" y="91" width="219" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="lid-bL-jI9" firstAttribute="top" secondItem="ruL-E9-cTc" secondAttribute="top" constant="91" id="8LH-Nn-cOl"/>
+                                    <constraint firstAttribute="bottom" secondItem="KXv-yU-Mth" secondAttribute="bottom" id="BV2-BC-ger"/>
+                                    <constraint firstAttribute="trailing" secondItem="lid-bL-jI9" secondAttribute="trailing" constant="78" id="Osb-HI-KlF"/>
+                                    <constraint firstItem="lid-bL-jI9" firstAttribute="leading" secondItem="ruL-E9-cTc" secondAttribute="leading" constant="78" id="iHs-Nw-1nV"/>
+                                    <constraint firstAttribute="trailing" secondItem="KXv-yU-Mth" secondAttribute="trailing" id="js8-2C-93I"/>
+                                    <constraint firstItem="KXv-yU-Mth" firstAttribute="top" secondItem="ruL-E9-cTc" secondAttribute="top" id="pzy-aE-2td"/>
+                                    <constraint firstItem="KXv-yU-Mth" firstAttribute="leading" secondItem="ruL-E9-cTc" secondAttribute="leading" id="v4T-YE-4bB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ruL-E9-cTc" secondAttribute="trailing" id="3GQ-HP-Hui"/>
+                            <constraint firstItem="mHF-VS-cYI" firstAttribute="top" secondItem="ruL-E9-cTc" secondAttribute="bottom" id="IsM-UD-TcR"/>
+                            <constraint firstItem="ruL-E9-cTc" firstAttribute="leading" secondItem="EWc-EH-jes" secondAttribute="leading" id="Pwd-ka-O3K"/>
+                            <constraint firstItem="ruL-E9-cTc" firstAttribute="centerY" secondItem="EWc-EH-jes" secondAttribute="centerY" id="jsz-57-3OF"/>
+                            <constraint firstItem="ruL-E9-cTc" firstAttribute="top" secondItem="EWc-EH-jes" secondAttribute="top" id="nXk-CR-SdD"/>
+                            <constraint firstItem="ruL-E9-cTc" firstAttribute="centerX" secondItem="EWc-EH-jes" secondAttribute="centerX" id="uuK-NA-LX3"/>
+                        </constraints>
+                    </scrollView>
+                    <navigationItem key="navigationItem" id="S0N-Mv-Z19"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="1Gy-0E-XX7">
+        <scene sceneID="dNS-Mx-wAn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BeN-aq-L27" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PTD-Km-lgG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GNN-CK-FgN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3y0-Jp-tGD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LMg-ut-z6S"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JdS-hX-5sy"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uri-Ga-MRY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KcP-Ws-COQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="358" y="123"/>
+            <point key="canvasLocation" x="407" y="123"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="1300" height="2000"/>
+    </resources>
 </document>
