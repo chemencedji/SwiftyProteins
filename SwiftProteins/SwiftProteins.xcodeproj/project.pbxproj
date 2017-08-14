@@ -12,6 +12,11 @@
 		CD05FC1F1F3CA3CA0000010B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD05FC1D1F3CA3CA0000010B /* Main.storyboard */; };
 		CD05FC211F3CA3CA0000010B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD05FC201F3CA3CA0000010B /* Assets.xcassets */; };
 		CD05FC241F3CA3CA0000010B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD05FC221F3CA3CA0000010B /* LaunchScreen.storyboard */; };
+		CD05FC2D1F3D87160000010B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05FC2C1F3D87160000010B /* ListViewController.swift */; };
+		CD05FC301F3DC17F0000010B /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD05FC2F1F3DC17F0000010B /* LocalAuthentication.framework */; };
+		CD05FC321F3DD8DA0000010B /* ProteinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05FC311F3DD8DA0000010B /* ProteinTableViewCell.swift */; };
+		CD70F09C1F417DF400F10481 /* resurces.txt in Resources */ = {isa = PBXBuildFile; fileRef = CD70F09B1F417DF400F10481 /* resurces.txt */; };
+		CD70F09E1F4189AB00F10481 /* ProteinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD70F09D1F4189AB00F10481 /* ProteinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		CD05FC201F3CA3CA0000010B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD05FC231F3CA3CA0000010B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD05FC251F3CA3CA0000010B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD05FC2C1F3D87160000010B /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		CD05FC2F1F3DC17F0000010B /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		CD05FC311F3DD8DA0000010B /* ProteinTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinTableViewCell.swift; sourceTree = "<group>"; };
+		CD70F09B1F417DF400F10481 /* resurces.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = resurces.txt; sourceTree = "<group>"; };
+		CD70F09D1F4189AB00F10481 /* ProteinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD05FC301F3DC17F0000010B /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +51,7 @@
 			children = (
 				CD05FC181F3CA3CA0000010B /* SwiftProteins */,
 				CD05FC171F3CA3CA0000010B /* Products */,
+				CD05FC2E1F3DC17F0000010B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +69,10 @@
 				CD05FC2B1F3CA3D40000010B /* utils */,
 				CD05FC1B1F3CA3CA0000010B /* LoginViewController.swift */,
 				CD05FC1D1F3CA3CA0000010B /* Main.storyboard */,
+				CD70F09D1F4189AB00F10481 /* ProteinViewController.swift */,
+				CD05FC311F3DD8DA0000010B /* ProteinTableViewCell.swift */,
+				CD05FC2C1F3D87160000010B /* ListViewController.swift */,
+				CD70F09B1F417DF400F10481 /* resurces.txt */,
 			);
 			path = SwiftProteins;
 			sourceTree = "<group>";
@@ -70,6 +86,14 @@
 				CD05FC251F3CA3CA0000010B /* Info.plist */,
 			);
 			name = utils;
+			sourceTree = "<group>";
+		};
+		CD05FC2E1F3DC17F0000010B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD05FC2F1F3DC17F0000010B /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +128,7 @@
 				TargetAttributes = {
 					CD05FC151F3CA3CA0000010B = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = SLMRL63BY6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -133,6 +158,7 @@
 			files = (
 				CD05FC241F3CA3CA0000010B /* LaunchScreen.storyboard in Resources */,
 				CD05FC211F3CA3CA0000010B /* Assets.xcassets in Resources */,
+				CD70F09C1F417DF400F10481 /* resurces.txt in Resources */,
 				CD05FC1F1F3CA3CA0000010B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,7 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD05FC1C1F3CA3CA0000010B /* LoginViewController.swift in Sources */,
+				CD05FC321F3DD8DA0000010B /* ProteinTableViewCell.swift in Sources */,
+				CD70F09E1F4189AB00F10481 /* ProteinViewController.swift in Sources */,
 				CD05FC1A1F3CA3CA0000010B /* AppDelegate.swift in Sources */,
+				CD05FC2D1F3D87160000010B /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SLMRL63BY6;
 				INFOPLIST_FILE = SwiftProteins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ichemenc.SwiftProteins;
@@ -282,6 +312,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SLMRL63BY6;
 				INFOPLIST_FILE = SwiftProteins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ichemenc.SwiftProteins;
@@ -309,6 +340,7 @@
 				CD05FC2A1F3CA3CA0000010B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
