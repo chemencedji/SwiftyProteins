@@ -191,17 +191,55 @@
         <scene sceneID="MxV-Mh-GnY">
             <objects>
                 <viewController storyboardIdentifier="ProteinViewController" id="JBL-1v-CJ1" customClass="ProteinViewController" customModule="SwiftProteins" customModuleProvider="target" sceneMemberID="viewController">
-                    <sceneKitView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="EJN-v2-ubo">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Zw-HG-tgt"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ips-bc-Uin"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tgd-1m-Qhk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </sceneKitView>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCG-vW-kKY">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JBL-1v-CJ1" id="sGl-KH-Tke"/>
+                                </connections>
+                            </sceneKitView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vOQ-GK-Fec">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected element is loading ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfB-Nt-Rr2">
+                                <rect key="frame" x="0.0" y="50" width="375" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="TrX-uf-3vc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.48262709380000002" green="0.98568159339999994" blue="0.98718625309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.48262709379196167" green="0.98568159341812134" blue="0.9871862530708313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wCG-vW-kKY" secondAttribute="trailing" id="8mu-EB-p3I"/>
+                            <constraint firstItem="sfB-Nt-Rr2" firstAttribute="top" secondItem="Tgd-1m-Qhk" secondAttribute="top" constant="50" id="J9v-nd-z8H"/>
+                            <constraint firstItem="wCG-vW-kKY" firstAttribute="leading" secondItem="Tgd-1m-Qhk" secondAttribute="leading" id="Jm7-Ed-ccC"/>
+                            <constraint firstAttribute="trailing" secondItem="sfB-Nt-Rr2" secondAttribute="trailing" id="M4K-rt-brU"/>
+                            <constraint firstItem="Ips-bc-Uin" firstAttribute="top" secondItem="wCG-vW-kKY" secondAttribute="bottom" id="QH8-dl-soS"/>
+                            <constraint firstItem="wCG-vW-kKY" firstAttribute="top" secondItem="sfB-Nt-Rr2" secondAttribute="bottom" constant="-2" id="S9M-Z5-swC"/>
+                            <constraint firstItem="wCG-vW-kKY" firstAttribute="top" secondItem="Tgd-1m-Qhk" secondAttribute="top" constant="100" id="WYN-R6-1Xy"/>
+                            <constraint firstItem="sfB-Nt-Rr2" firstAttribute="leading" secondItem="Tgd-1m-Qhk" secondAttribute="leading" id="otV-ap-GuW"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="proteinModel" destination="EJN-v2-ubo" id="ae4-yj-fsc"/>
+                        <outlet property="elementLabel" destination="sfB-Nt-Rr2" id="t6y-rR-Eit"/>
+                        <outlet property="viewProtein" destination="wCG-vW-kKY" id="666-Xw-KUh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPh-1y-sPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2502" y="123"/>
+            <point key="canvasLocation" x="2501.5999999999999" y="122.78860569715144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dNS-Mx-wAn">
