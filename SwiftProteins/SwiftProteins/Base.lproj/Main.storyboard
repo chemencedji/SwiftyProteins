@@ -201,20 +201,23 @@
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCG-vW-kKY">
                                 <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="JBL-1v-CJ1" id="sGl-KH-Tke"/>
+                                    <outletCollection property="gestureRecognizers" destination="pfJ-gI-R16" appends="YES" id="TIK-05-il8"/>
                                 </connections>
                             </sceneKitView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vOQ-GK-Fec">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected element is loading ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfB-Nt-Rr2">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected element is loading ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfB-Nt-Rr2">
                                 <rect key="frame" x="0.0" y="50" width="375" height="52"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="TrX-uf-3vc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -234,10 +237,16 @@
                     </view>
                     <connections>
                         <outlet property="elementLabel" destination="sfB-Nt-Rr2" id="t6y-rR-Eit"/>
+                        <outlet property="tapAction" destination="pfJ-gI-R16" id="TdN-hL-Nth"/>
                         <outlet property="viewProtein" destination="wCG-vW-kKY" id="666-Xw-KUh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPh-1y-sPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="pfJ-gI-R16">
+                    <connections>
+                        <outlet property="delegate" destination="JBL-1v-CJ1" id="MPB-je-3oi"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2501.5999999999999" y="122.78860569715144"/>
         </scene>

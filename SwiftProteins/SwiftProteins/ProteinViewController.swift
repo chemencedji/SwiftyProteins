@@ -10,13 +10,15 @@ import UIKit
 import SceneKit
 import SpriteKit
 
-class ProteinViewController: UIViewController {
+class ProteinViewController: UIViewController, UIGestureRecognizerDelegate {
     
     static var proteinName: String = ""
     var AtomList:[SCNNode] = []
+    var AtomLetter:[String] = []
     
     @IBOutlet weak var elementLabel: UILabel!
     
+    @IBOutlet var tapAction: UITapGestureRecognizer! = UITapGestureRecognizer()
     
     @IBOutlet weak var viewProtein: SCNView!
     var proteinModels: [String] = []
@@ -42,7 +44,7 @@ class ProteinViewController: UIViewController {
             if let data = data,
                 let html = String(data: data, encoding: String.Encoding.utf8) {
                 self.proteinModels.append(contentsOf: html.components(separatedBy: .newlines))
-//                self.viewProtein = SCNView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+ //              self.viewProtein = SCNView(frame: CGRect(x: 100, y: 100, width: 200, height: 200))
                 self.viewProtein = SCNView(frame: self.viewProtein.frame)
                 self.viewProtein?.scene = SCNScene()
                 self.viewProtein?.autoenablesDefaultLighting = true
@@ -52,10 +54,16 @@ class ProteinViewController: UIViewController {
                 cameraNode.camera = SCNCamera()
                 cameraNode.position = SCNVector3(x: 0, y: 0, z: 60)
                 self.viewProtein?.scene?.rootNode.addChildNode(cameraNode)
+                self.tapAction = UITapGestureRecognizer(target: self, action: #selector(ProteinViewController.myviewTapped(_:)))
+                self.tapAction.numberOfTapsRequired = 1
+                self.tapAction.numberOfTouchesRequired = 1
+                self.viewProtein.addGestureRecognizer(self.tapAction)
+                self.viewProtein.isUserInteractionEnabled = true
                 for line in self.proteinModels{
                     var sceneP = line.components(separatedBy: .whitespaces)
                     sceneP = sceneP.filter { $0 != ""}
                     //print(sceneP)
+                    DispatchQueue.main.async {
                     if sceneP.contains("ATOM"){
                         let shape = SCNSphere(radius: 0.3)
                         self.CPKcoloring(gem: shape, color: sceneP[11])
@@ -63,7 +71,8 @@ class ProteinViewController: UIViewController {
                         shapeNode.position = SCNVector3(x: Float(sceneP[6])!, y: Float(sceneP[7])!, z: Float(sceneP[8])!)
                         self.viewProtein?.scene?.rootNode.addChildNode(shapeNode)
                         self.AtomList.append(shapeNode)
-                        self.view = self.viewProtein
+                        self.AtomLetter.append(sceneP[11])
+                        self.view.addSubview(self.viewProtein) //= self.viewProtein
                     } else if sceneP.contains("CONECT"){
                         let from = Int(sceneP[1])
                         let to = sceneP[2..<sceneP.count]
@@ -72,11 +81,28 @@ class ProteinViewController: UIViewController {
                             self.viewProtein?.scene?.rootNode.addChildNode(line)
                         }
                     }
-                    self.elementLabel.text = "Selected element:"
                 }
             }
         }
+    }
         task.resume()
+        self.elementLabel.text = "Selected element:"
+}
+    
+    
+    func myviewTapped(_ sender: UITapGestureRecognizer) {
+        let location: CGPoint = sender.location(in: viewProtein)
+        let hits = self.viewProtein.hitTest(location, options: nil)
+        var i = 0
+        if let tappedNode = hits.first?.node {
+            for ele in AtomList{
+                if ele == tappedNode {
+                    break
+                }
+                i += 1
+            }
+        }
+        self.elementLabel.text = "Selected element: \(AtomLetter[i])"
     }
     
     

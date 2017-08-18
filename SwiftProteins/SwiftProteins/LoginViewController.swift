@@ -14,9 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var userPass: UITextField!
     @IBAction func userLogin(_ sender: UIButton) {
-        print(userName.text!)
-        print(userPass.text!)
-        self.navigateToAuthenticatedViewController()
+        if userName.text == "igor" && userPass.text == "igor" {
+            self.navigateToAuthenticatedViewController()
+        }
     }
     
     @IBAction func touchID(_ sender: UIButton) {
